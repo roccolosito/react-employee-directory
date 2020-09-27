@@ -67,6 +67,7 @@ class MainPage extends Component {
     };
 
     handleSearchChange = (event) => {
+        event.preventDefault();
         let sorted = event.target.value;
         const filteredList = this.state.result.filter((result) => {
             let values = Object.values(result).join("").toLowerCase();
@@ -81,6 +82,7 @@ class MainPage extends Component {
                 <Header />
                 <Search
                     handleSearchChange={this.handleSearchChange}
+                    // handleFormSubmit={this.handleFormSubmit}
                 />
                 <Results
                     results={this.state.result}
