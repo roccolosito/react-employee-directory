@@ -7,6 +7,8 @@
 ## Description
 A React app which lets a user quickly access profiles from a directory -- great for employers looking to swiftly filter through their employee roster.
 
+Deployed app via Heroku: https://hidden-dusk-74243.herokuapp.com/
+
 ## Visuals
 
 ![DirectoryGif](./assets/images/directory.gif)
