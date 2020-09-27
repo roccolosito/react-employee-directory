@@ -1,0 +1,10 @@
+form {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+input {
+    width: 60%;
+    margin: 0px 5px 20px 0px;
+}

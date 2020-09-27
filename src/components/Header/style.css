@@ -1,0 +1,19 @@
+#pageHeader {
+    background-size: cover;
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    padding-top: 25px;
+    text-align: center;
+}
+
+h5 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
