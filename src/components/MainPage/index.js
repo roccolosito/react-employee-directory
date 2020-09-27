@@ -9,6 +9,7 @@ class MainPage extends Component {
     state = {
         search: "",
         result: []
+
     }
 
     // When this component mounts, send back the first 40 employee profiles, like useEffect
@@ -30,9 +31,9 @@ class MainPage extends Component {
         const value = event.target.value;
         const name = event.target.name;
         this.setState({
-          [name]: value
+            [name]: value
         }, () => console.log(this.state));
-      };
+    };
 
     // When the form is submitted, search the Random User API for the value of `this.state.search`
     handleFormSubmit = event => {
@@ -65,14 +66,21 @@ class MainPage extends Component {
         return 0;
     };
 
+    handleSearchChange = (event) => {
+        let sorted = event.target.value;
+        const filteredList = this.state.result.filter((result) => {
+            let values = Object.values(result).join("").toLowerCase();
+            return values.indexOf(sorted.toLowerCase()) !== -1;
+        })
+        this.setState({ result: filteredList });
+    };
+
     render() {
         return (
             <div>
                 <Header />
                 <Search
-                    value={this.state.search}
-                    handleInputChange={this.handleInputChange}
-                    handleFormSubmit={this.handleFormSubmit}
+                    handleSearchChange={this.handleSearchChange}
                 />
                 <Results
                     results={this.state.result}
