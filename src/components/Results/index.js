@@ -7,11 +7,11 @@ function Results(props) {
             <thead>
                 <tr>
                     <th></th>
-                    <th scope="col"><a onClick={() => props.name.sortByName()}>First Name</a></th>
-                    <th scope="col"><a onClick={() => props.name.sortByName()}>Last Name</a></th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Cell</th>
-                    <th scope="col">Age</th>
+                    <th scope="col"><a onClick={() => props.sortByName()}>First Name</a></th>
+                    <th scope="col"><a onClick={() => props.sortByName()}>Last Name</a></th>
+                    <th scope="col"><a onClick={() => props.sortByName()}>Email</a></th>
+                    <th scope="col"><a onClick={() => props.sortByName()}>Cell</a></th>
+                    <th scope="col"><a onClick={() => props.sortByName()}>Age</a></th>
                 </tr>
             </thead>
             <tbody>
