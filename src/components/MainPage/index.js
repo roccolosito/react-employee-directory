@@ -40,31 +40,7 @@ class MainPage extends Component {
         this.searchEmployees(this.state.search);
     };
 
-    // sort by name
-    // employeeSortDesc = (a, b) => {
-    //     var nameA = a.name.first.toUpperCase();
-    //     var nameB = b.name.first.toUpperCase();
-    //     if (nameA < nameB) {
-    //         return -1;
-    //     }
-    //     if (nameA > nameB) {
-    //         return 1;
-    //     }
-    //     return 0;
-    // };
-
-    // employeeSortAsc = (a, b) => {
-    //     var nameA = a.name.first.toUpperCase();
-    //     var nameB = b.name.first.toUpperCase();
-    //     if (nameA < nameB) {
-    //         return 1;
-    //     }
-    //     if (nameA > nameB) {
-    //         return -1;
-    //     }
-    //     return 0;
-    // };
-
+    // Function to sort name alphabetically when clicking on table header
     sortByName = () => {
         var alphabetical = this.state.result.sort(comparefunc);
         function comparefunc(a, b) {
@@ -96,7 +72,6 @@ class MainPage extends Component {
                 <Header />
                 <Search
                     handleSearchChange={this.handleSearchChange}
-                // handleFormSubmit={this.handleFormSubmit}
                 />
                 <Results
                     results={this.state.result}
