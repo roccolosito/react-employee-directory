@@ -7,8 +7,8 @@ function Results(props) {
             <thead>
                 <tr>
                     <th></th>
-                    <th scope="col"><a onClick={() => props.name.employeeSortAsc()}>First Name</a></th>
-                    <th scope="col"><a onClick={() => props.name.employeeSortDesc()}>Last Name</a></th>
+                    <th scope="col"><a onClick={() => props.name.sortByName()}>First Name</a></th>
+                    <th scope="col"><a onClick={() => props.name.sortByName()}>Last Name</a></th>
                     <th scope="col">Email</th>
                     <th scope="col">Cell</th>
                     <th scope="col">Age</th>

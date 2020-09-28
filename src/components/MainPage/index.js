@@ -8,14 +8,13 @@ class MainPage extends Component {
     // equivalent to useState
     state = {
         search: "",
-        result: []
-
-    }
+        result: [],
+    };
 
     // When this component mounts, send back the first 40 employee profiles, like useEffect
     componentDidMount() {
         this.searchEmployees();
-    }
+    };
 
     searchEmployees = () => {
         API.search()
@@ -42,29 +41,44 @@ class MainPage extends Component {
     };
 
     // sort by name
-    employeeSortDesc = (a, b) => {
-        var nameA = a.name.first.toUpperCase();
-        var nameB = b.name.first.toUpperCase();
-        if (nameA < nameB) {
-            return -1;
-        }
-        if (nameA > nameB) {
-            return 1;
-        }
-        return 0;
-    };
+    // employeeSortDesc = (a, b) => {
+    //     var nameA = a.name.first.toUpperCase();
+    //     var nameB = b.name.first.toUpperCase();
+    //     if (nameA < nameB) {
+    //         return -1;
+    //     }
+    //     if (nameA > nameB) {
+    //         return 1;
+    //     }
+    //     return 0;
+    // };
 
-    employeeSortAsc = (a, b) => {
-        var nameA = a.name.first.toUpperCase();
-        var nameB = b.name.first.toUpperCase();
-        if (nameA < nameB) {
-            return 1;
+    // employeeSortAsc = (a, b) => {
+    //     var nameA = a.name.first.toUpperCase();
+    //     var nameB = b.name.first.toUpperCase();
+    //     if (nameA < nameB) {
+    //         return 1;
+    //     }
+    //     if (nameA > nameB) {
+    //         return -1;
+    //     }
+    //     return 0;
+    // };
+
+    sortByName = () => {
+        var alphabetical = this.state.result.sort(comparefunc);
+        function comparefunc(a, b) {
+            const nameA = a.name.last.toUpperCase();
+            const nameB = b.name.last.toUpperCase();
+            if (nameA > nameB) {
+                return 1;
+            } else if (nameA < nameB) {
+                return -1;
+            }
+            return 0;
         }
-        if (nameA > nameB) {
-            return -1;
-        }
-        return 0;
-    };
+        this.setState({ result: alphabetical });
+    }
 
     handleSearchChange = (event) => {
         event.preventDefault();
@@ -82,12 +96,11 @@ class MainPage extends Component {
                 <Header />
                 <Search
                     handleSearchChange={this.handleSearchChange}
-                    // handleFormSubmit={this.handleFormSubmit}
+                // handleFormSubmit={this.handleFormSubmit}
                 />
                 <Results
                     results={this.state.result}
-                    employeeSortAsc={this.employeeSortAsc}
-                    employeeSortDesc={this.employeeSortDesc}
+                    sortByName={this.sortByName}
                 />
             </div>
         );
